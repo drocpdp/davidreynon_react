@@ -1,9 +1,10 @@
 import React from "react";
+import './header-title.styles.scss';
 
 const HeaderTitle = () => {
     return (
-        <div>
-            <h2>DAVID EYNON</h2>
+        <div className="top-title">
+            DAVID EYNON
         </div>
     );
 };
