@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './main-content.styles.scss';
-import image1 from '../../assets/PopupAutomationImage.jpg';
+import projectData from '../../assets/data/projects-content.json';
 
 const MainContent = () => {
 
-    const text1 = "Get a fully robust cross-platform l OS' and all Mobile Devices) testing framework up and running for your business. One code base for all, so to speak. Utilizes Sau ss Labs, sends email alerts, controllable via Jenkins, housed 100% off-site ";
-    const text2 = "Uses Page Object Design Model, which can easily be accomodated to fit, as a top layer, all Behavioral Driven Frameworks (Cucumber, Robot, etc).";
-    const text3 = "Allows for scheduleable, configurable, discrete test runs in a multitude of device, OS, browser, and run-type test matrix combinations.";
-
+    const [imageSrc, setImageSrc] = useState(null);
+    const currProject = projectData[4];
+    
+    useEffect(() => {
+        import(`../../assets/${currProject.projectImageSource}`)
+          .then(image => {
+            setImageSrc(image.default);
+          })
+          .catch(err => {
+            console.error("Error loading image:", err);
+          });
+      }, [currProject.projectImageSource]);
+    
+    
     return (
         <div class="display-container">
-                <div class="display-content-project-name">POP UP AUTOMATION</div>
+                <div class="display-content-project-name">{currProject.name}</div>
             <div class="display-content-content-container-grid">
                 <div class="display-content-image-container">
-                    <img class="display-content-large-image" src={image1} />
+                    <img class="display-content-large-image" src={imageSrc} />
                 </div>
                 <div class="display-content-content-container">
                     <div class="display-content-long-description">
-                        {text1}
+                        {currProject.longDescription}
                     </div>
                     <div class="display-content-long-description">
-                        {text2}
+                    {currProject.longDescription2}
                     </div>
                     <div class="display-content-long-description">
-                        {text3}
+                    {currProject.longDescription3}
                     </div>
+                    <div class="display-content-long-description">
+                    {currProject.longDescription4}
+                    </div>                    
                     <div class="display-content-project-url-container">
-                        <a href="" class="display-content-project-url">https://github.com/drocpdp/test_framework_template</a>
+                        <a href="" class="display-content-project-url">{currProject.projectUrl}</a>
                     </div>
                     <div class="display-content-project-keywords">
-                        AWS EC2, Python3, Selenium, Appium, Sauce Labs, Jenkins
+                        {currProject['keywords']}
                     </div>
                 </div>
             </div>
