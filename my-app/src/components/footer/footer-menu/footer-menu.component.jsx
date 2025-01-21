@@ -7,7 +7,7 @@ const FooterMenuComponent = () => {
             <a href=''>About Me</a>  |  
             <a href=''> LinkedIn</a>  |  
             <a href=''> Github</a>  |  
-            <a href=''> Bitbucket</a> -- Copyright 2024 - David Eynon
+            <a href=''> Bitbucket</a> -- Copyright 2025 - David Eynon
     </div>        
     );
 };

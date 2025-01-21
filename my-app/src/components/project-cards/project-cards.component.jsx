@@ -11,7 +11,6 @@ const ProjectCards = () => {
 
         <div class="project-cards">
             
-
             {projectsContentState.projectsContentData.data.allCards
                 .slice(1)
                 .map((card) => ( 

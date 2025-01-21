@@ -47,7 +47,7 @@ export const projectsContentData = {
                         "projectImageSource":"AngularPersonalSite.jpg",        
                         "projectUrl": "https://davidreynon.com",
                         "projectUrlTitle": "Angular Resume Site",
-                        "shortDescription": "This site, davidreynon.com was written using Angular.",
+                        "shortDescription": "This site, davidreynon.com was originally written using Angular.",
                         "longDescription": "While learning Angular, I decided to create this site (the one you are on right now) to show my progress in learning Angular. Written using Angular, CSS, HTML5, Javascript.",
                         "longDescription2": "Graphic Design is 100% organic. Emphasis is on the accomodation, for viewing, of a majority of devices, both mobile and desktop. Grid design was thoroughly researched to allow for repositioning in the best esthetical way possible if browser resized (and/or mobile browsers used).",
                         "longDescription3": "In addition, website design is hugely template-driven by design, separating, as much as possible, design and logic components from data components.",
