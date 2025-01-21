@@ -5,7 +5,7 @@ import { ProjectsContentContext } from "../../contexts/projects-content.context"
 
 const ProjectCards = () => {
 
-    const {projectsContentState, projectContentDispatch} = useContext(ProjectsContentContext);
+    const {projectsContentState, projectsContentDispatch} = useContext(ProjectsContentContext);
 
     return (
 
@@ -14,7 +14,20 @@ const ProjectCards = () => {
             {projectsContentState.projectsContentData.data.allCards
                 .slice(1)
                 .map((card) => ( 
-                        <div class="project-card" id={card.id}>
+                        <div 
+                            class="project-card" 
+                            key={card.id}
+                            onClick = {ev => {
+                                                projectsContentDispatch(
+                                                    {
+                                                        type:"CHANGE_PROJECT_DISPLAY_ID",
+                                                        payload:{"newProjectID": card.id}    
+                                                    }
+                                                )
+                                               }
+                            }   
+                        >
+                            
                             <div class="project-title">{card.name}</div>
                             <div class="project-image">
                                 <img 

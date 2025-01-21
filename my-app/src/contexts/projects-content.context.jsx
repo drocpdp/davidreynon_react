@@ -3,8 +3,29 @@ import projectsContentData from "../assets/data/projects-content";
 
 const INITIAL_STATE = {projectsContentData};
 
+const displayProjectIDJustClicked = (state, action) => {
+    const newProjectIDIndex = action.payload.newProjectID - 1; // Adjust index
+    const returnObject = {
+        ...state,
+        projectsContentData: {
+            ...state.projectsContentData, // Spread existing `projectsContentData`
+            data: {
+                ...state.projectsContentData.data, // Spread existing `data`
+                selections: {
+                    ...state.projectsContentData.data.selections, // Spread existing `selections`
+                    currentIndexSelected: newProjectIDIndex, // Update only `currentIndexSelected`
+                },
+            },
+        },
+    };
+    return returnObject;
+};
+
+
 const projectsContentReducer = (projectsContentState, projectsContentAction) => {
     switch(projectsContentAction.type) {
+        case "CHANGE_PROJECT_DISPLAY_ID":
+            return displayProjectIDJustClicked(projectsContentState, projectsContentAction);
         default:
             return projectsContentState;
     }
