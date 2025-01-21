@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import './main-content.styles.scss';
-import projectData from '../../assets/data/projects-content.json';
+import projectsContentData from '../../assets/data/projects-content';
+import { ProjectsContentContext } from "../../contexts/projects-content.context";
 
 const MainContent = () => {
 
     const [imageSrc, setImageSrc] = useState(null);
-    const currProject = projectData[4];
+    const currProject = projectsContentData.data[0];
+    const {projectContentState, projectContentDispatch} = useContext(ProjectsContentContext);
     
     useEffect(() => {
         import(`../../assets/${currProject.projectImageSource}`)
@@ -20,7 +22,7 @@ const MainContent = () => {
     
     return (
         <div class="display-container">
-                <div class="display-content-project-name">{currProject.name}</div>
+                <div class="display-content-project-name">About Me</div>
             <div class="display-content-content-container-grid">
                 <div class="display-content-image-container">
                     <img class="display-content-large-image" src={imageSrc} />
