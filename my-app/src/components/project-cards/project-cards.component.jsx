@@ -3,8 +3,6 @@ import { useContext, useEffect } from "react";
 import './project-cards.styles.scss';
 import { ProjectsContentContext } from "../../contexts/projects-content.context";
 
-import image1 from '../../assets/pytwitserviceImage.jpg';
-
 const ProjectCards = () => {
 
     const {projectsContentState, projectContentDispatch} = useContext(ProjectsContentContext);
@@ -14,7 +12,7 @@ const ProjectCards = () => {
         <div class="project-cards">
             
 
-            {projectsContentState.projectsContentData.data
+            {projectsContentState.projectsContentData.data.allCards
                 .slice(1)
                 .map((card) => ( 
                         <div class="project-card" id={card.id}>

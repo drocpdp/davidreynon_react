@@ -6,9 +6,10 @@ import { ProjectsContentContext } from "../../contexts/projects-content.context"
 const MainContent = () => {
 
     const [imageSrc, setImageSrc] = useState(null);
-    const currProject = projectsContentData.data[0];
-    const {projectContentState, projectContentDispatch} = useContext(ProjectsContentContext);
-    
+    const {projectsContentState, projectContentDispatch} = useContext(ProjectsContentContext);
+    const currSelectedIndex = projectsContentState.projectsContentData.data.selections.currentIndexSelected;
+    const currProject = projectsContentState.projectsContentData.data.allCards[currSelectedIndex];
+
     useEffect(() => {
         import(`../../assets/${currProject.projectImageSource}`)
           .then(image => {
@@ -22,10 +23,14 @@ const MainContent = () => {
     
     return (
         <div class="display-container">
-                <div class="display-content-project-name">About Me</div>
+                <div class="display-content-project-name">{currProject.name}</div>
             <div class="display-content-content-container-grid">
                 <div class="display-content-image-container">
-                    <img class="display-content-large-image" src={imageSrc} />
+                    <img 
+                        class="display-content-large-image" 
+                        src={require(`../../assets/${currProject.projectImageSource}`)} 
+                        alt={currProject.name}
+                    />
                 </div>
                 <div class="display-content-content-container">
                     <div class="display-content-long-description">
