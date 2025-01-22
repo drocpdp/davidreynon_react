@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import './main-content.styles.scss';
-import projectData from '../../assets/data/projects-content.json';
+import projectsContentData from '../../assets/data/projects-content';
+import { ProjectsContentContext } from "../../contexts/projects-content.context";
 
 const MainContent = () => {
 
     const [imageSrc, setImageSrc] = useState(null);
-    const currProject = projectData[4];
-    
+    const {projectsContentState, projectContentDispatch} = useContext(ProjectsContentContext);
+    const currSelectedIndex = projectsContentState.projectsContentData.data.selections.currentIndexSelected;
+    const currProject = projectsContentState.projectsContentData.data.allCards[currSelectedIndex];
+
     useEffect(() => {
         import(`../../assets/${currProject.projectImageSource}`)
           .then(image => {
@@ -23,7 +26,11 @@ const MainContent = () => {
                 <div class="display-content-project-name">{currProject.name}</div>
             <div class="display-content-content-container-grid">
                 <div class="display-content-image-container">
-                    <img class="display-content-large-image" src={imageSrc} />
+                    <img 
+                        class="display-content-large-image" 
+                        src={require(`../../assets/${currProject.projectImageSource}`)} 
+                        alt={currProject.name}
+                    />
                 </div>
                 <div class="display-content-content-container">
                     <div class="display-content-long-description">

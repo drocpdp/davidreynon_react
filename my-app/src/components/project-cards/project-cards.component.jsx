@@ -1,85 +1,57 @@
 import React from "react";
+import { useContext, useEffect } from "react";
 import './project-cards.styles.scss';
-
-import image1 from '../../assets/pytwitserviceImage.jpg';
+import { ProjectsContentContext } from "../../contexts/projects-content.context";
 
 const ProjectCards = () => {
+
+    const {projectsContentState, projectsContentDispatch} = useContext(ProjectsContentContext);
+
     return (
 
         <div class="project-cards">
-            <div class="project-card">
-                <div class="project-title">Project 1</div>
-                <div class="project-image">
-                    <img class="project-cards-image" src={image1} alt="not found image" />
-                </div>
-                <div class="project-short-description">
-                    A Python Bot/Service. Programatically scan Twitter feed. Custom search, alerts, automatic Retweet.
-                </div>
-                ---
-                <div class="project-keywords">
-                    Python3, Twitter, Tweepy, Amazon AWS, Jenkins
-                </div>
-                <br/>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Project 1</div>
-                <div class="project-image">
-                    <img class="project-cards-image" src={image1} alt="not found image" />
-                </div>
-                <div class="project-short-description">
-                    A Python Bot/Service. Programatically scan Twitter feed. Custom search, alerts, automatic Retweet.
-                </div>
-                ---
-                <div class="project-keywords">
-                    Python3, Twitter, Tweepy, Amazon AWS, Jenkins
-                </div>
-                <br/>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Project 1</div>
-                <div class="project-image">
-                    <img class="project-cards-image" src={image1} alt="not found image" />
-                </div>
-                <div class="project-short-description">
-                    A Python Bot/Service. Programatically scan Twitter feed. Custom search, alerts, automatic Retweet.
-                </div>
-                ---
-                <div class="project-keywords">
-                    Python3, Twitter, Tweepy, Amazon AWS, Jenkins
-                </div>
-                <br/>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Project 1</div>
-                <div class="project-image">
-                    <img class="project-cards-image" src={image1} alt="not found image" />
-                </div>
-                <div class="project-short-description">
-                    A Python Bot/Service. Programatically scan Twitter feed. Custom search, alerts, automatic Retweet.
-                </div>
-                ---
-                <div class="project-keywords">
-                    Python3, Twitter, Tweepy, Amazon AWS, Jenkins
-                </div>
-                <br/>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Project 1</div>
-                <div class="project-image">
-                    <img class="project-cards-image" src={image1} alt="not found image" />
-                </div>
-                <div class="project-short-description">
-                    A Python Bot/Service. Programatically scan Twitter feed. Custom search, alerts, automatic Retweet.
-                </div>
-                ---
-                <div class="project-keywords">
-                    Python3, Twitter, Tweepy, Amazon AWS, Jenkins
-                </div>
-                <br/>
-            </div>                                                        
+            
+            {projectsContentState.projectsContentData.data.allCards
+                .slice(1)
+                .map((card) => ( 
+                        <div 
+                            class="project-card" 
+                            key={card.id}
+                            onClick = {ev => {
+                                                projectsContentDispatch(
+                                                    {
+                                                        type:"CHANGE_PROJECT_DISPLAY_ID",
+                                                        payload:{"newProjectID": card.id}    
+                                                    }
+                                                )
+                                               }
+                            }   
+                        >
+                            
+                            <div class="project-title">{card.name}</div>
+                            <div class="project-image">
+                                <img 
+                                    class="project-cards-image" 
+                                    src={require(`../../assets/${card.projectImageSource}`)}
+                                    alt="not found image"
+                                />
+                            </div>
+                            <div class="project-short-description">
+                                {card.shortDescription}
+                            </div>
+                            ---
+                            <div class="project-keywords">
+                                {card.keywords}
+                            </div>
+                            <br/>
+                        </div>
+                    )
+                )
+            };
+            
         </div>
         
-    )
+        )
 };
 
 export default ProjectCards;
