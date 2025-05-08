@@ -1,0 +1,48 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.Apple*
+*.appstore
+
+# Node
+node_modules/
+dist/
+.vite/
+.cache/
+.npm/
+
+# Environment
+.env
+.env.*
+
+# Editor configs
+*.log
+*.sublime*
+*.vscode/
+*.swp
+.idea/
+
+# Vite build
+/build/
+/dist/
+/vite.svg
+
+# Public output
+public/assets/
+public/vite.svg
+
+# OS-specific hidden files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Optional lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Exclude auto-generated or copied files
+*.local
