@@ -4,7 +4,8 @@ export const PROJECTS: any = [
 
     {   id:1,
         name: "About Me",
-        projectImageSource:"assets/images/self_profile_pic.jpg",
+        slug: "about",
+        projectImageSource:"/assets/images/self_profile_pic.jpg",
         projectUrl:'',
         projectUrlTitle:'',
         shortDescription:'',
@@ -17,7 +18,8 @@ export const PROJECTS: any = [
     {
         id: 2,
         name: "PyTwitService",
-        projectImageSource:"assets/images/pytwitserviceImage.jpg",
+        slug: "olympic",
+        projectImageSource:"/assets/images/pytwitserviceImage.jpg",
         projectUrl: 'https://github.com/drocpdp/pytwitservice',
         projectUrlTitle: "Food Truck Alert Github",
         shortDescription: "A Python Bot/Service. Programatically scan Twitter feed. Custom search, alerts, automatic Retweet.",
@@ -30,7 +32,8 @@ export const PROJECTS: any = [
     {
         id:3,
         name: "Pop Up Automation",
-        projectImageSource:"assets/images/PopupAutomationImage.jpg",
+        slug: "popup",
+        projectImageSource:"/assets/images/PopupAutomationImage.jpg",
         projectUrl: 'https://github.com/drocpdp/test_framework_template',
         projectUrlTitle: "Pop Up Automation",
         shortDescription: "Your own full-functioning, robust, cross-platform, Automation Framework up and running quickly for your web/mobile site.",
@@ -43,7 +46,8 @@ export const PROJECTS: any = [
     {
         id:4,
         name: "Angular Resume Site",
-        projectImageSource:"assets/images/AngularPersonalSite.jpg",        
+        slug: "angular-resume",
+        projectImageSource:"/assets/images/AngularPersonalSite.jpg",        
         projectUrl: 'https://davidreynon.com',
         projectUrlTitle: "Angular Resume Site",
         shortDescription: "This site, davidreynon.com was written using Angular.",
@@ -56,7 +60,8 @@ export const PROJECTS: any = [
     {
         id:5,
         name: "Testing: davidreynon.com",
-        projectImageSource:"assets/images/davidreynondotcom.jpg",        
+        slug: "testing-davidreynon-dot-com",
+        projectImageSource:"/assets/images/davidreynondotcom.jpg",        
         projectUrl: 'https://github.com/David-Eynon/davidreynondotcom',
         projectUrlTitle: "Testing: davidreynon.com",
         shortDescription: "Automated Testing for davidreynon.com.",
@@ -69,7 +74,8 @@ export const PROJECTS: any = [
     {
         id:6,
         name: "Work Experience",
-        projectImageSource: "assets/images/WorkExperience.jpg",
+        slug: "work-experience",
+        projectImageSource: "/assets/images/WorkExperience.jpg",
         projectUrl: 'https://www.linkedin.com/in/daveqa',
         projectUrlTitle: '',
         shortDescription: "Extensive experience in Banking, Ad Technology, Content Management, Consumer Sites, Design and Technology.",

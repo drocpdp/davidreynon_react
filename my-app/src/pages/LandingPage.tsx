@@ -1,28 +1,29 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+
 import { PROJECTS } from '../data/projects';
 import DisplayContainer from '../components/DisplayContainer';
 import ProjectCards from '../components/ProjectCards';
 
-const LandingPage = () => {
-  const params = useParams();
-  const [projectIdx, setProjectIdx] = useState(0);
-  const [selectedProject, setSelectedProject] = useState(PROJECTS[0]);
+
+const LandingPage = ({ initialProjectId }: { initialProjectId?: number }) => {
+  const defaultProject = PROJECTS.find((p: { id: number | undefined; }) => p.id === initialProjectId) || PROJECTS[0];
+  const [selectedProject, setSelectedProject] = useState(defaultProject);
+  const { slug } = useParams();
 
   useEffect(() => {
-    const param = params.project;
-    if (param) {
-      const index = PROJECTS.findIndex((p: { name: string; }) => p.name.toLowerCase().includes(param.toLowerCase()));
-      setProjectIdx(index >= 0 ? index : 0);
-    } else {
-      setProjectIdx(0);
+    if (slug) {
+      const match = PROJECTS.find((p: { slug: string; }) => p.slug === slug);
+      if (match) setSelectedProject(match);
     }
-  }, [params]);
-  
+  }, [slug]);
 
   useEffect(() => {
-    setSelectedProject(PROJECTS[projectIdx]);
-  }, [projectIdx]);
+    if (initialProjectId) {
+      const project = PROJECTS.find((p: { id: number; }) => p.id === initialProjectId);
+      if (project) setSelectedProject(project);
+    }
+  }, [initialProjectId]);
 
   return (
     <div className="landing-page">
@@ -33,9 +34,13 @@ const LandingPage = () => {
       </div>
 
       <DisplayContainer selectedProject={selectedProject} />
-      <ProjectCards allProjects={PROJECTS} onSelect={setSelectedProject} />
+      <ProjectCards
+        allProjects={PROJECTS}
+        onSelect={setSelectedProject}
+      />
     </div>
   );
 };
 
 export default LandingPage;
+
