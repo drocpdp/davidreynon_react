@@ -29,7 +29,6 @@ Open [http://localhost:5173](http://localhost:5173)
 
 ```bash
 npm run build
-cp dist/index.html dist/404.html
 npm run deploy
 ```
 
