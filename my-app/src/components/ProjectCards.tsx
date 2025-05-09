@@ -1,3 +1,5 @@
+import { getAssetUrl } from '../utils/assets';
+
 const ProjectCards = ({ allProjects, onSelect }: { allProjects: any[], onSelect: (p: any) => void }) => {
     return (
       <div className="project-cards">
@@ -12,7 +14,7 @@ const ProjectCards = ({ allProjects, onSelect }: { allProjects: any[], onSelect:
                 {project.name}
             </div>
             <div className="project-image">
-                <img src={project.projectImageSource} 
+                <img src= {getAssetUrl(project.projectImageSource)}
                     alt={project.name} 
                     className="project-cards-image"
                 />

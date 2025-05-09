@@ -1,4 +1,4 @@
-
+import { getAssetUrl } from '../utils/assets';
 
 const DisplayContainer = ({ selectedProject }: { selectedProject: any }) => {
   return (
@@ -13,7 +13,7 @@ const DisplayContainer = ({ selectedProject }: { selectedProject: any }) => {
       <div className="display-content-content-container-grid">
         <div className="display-content-image-container">
           <img
-            src={selectedProject.projectImageSource}
+            src={getAssetUrl(selectedProject.projectImageSource)}
             alt={selectedProject.name}
             className="display-content-large-image"
           />
