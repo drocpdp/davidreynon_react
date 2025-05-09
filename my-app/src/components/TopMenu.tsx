@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 
 const TopMenu = () => {
   return (
     <div id="top-menu-container" className="top-menu">
-      <a id="top-menu-about-me-link" href="/">About Me</a> |{" "}
+      <Link 
+        id="top-menu-about-me-link" to="/about">About Me</Link> |{" "}
       <a
         id="top-menu-linkedin-link"
         href="https://linkedin.com/in/daveqa"
