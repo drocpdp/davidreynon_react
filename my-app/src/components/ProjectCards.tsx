@@ -14,7 +14,8 @@ const ProjectCards = ({ allProjects, onSelect }: { allProjects: any[], onSelect:
                 {project.name}
             </div>
             <div className="project-image">
-                <img src= {getAssetUrl(project.projectImageSource)}
+                <img 
+                    src={`${import.meta.env.BASE_URL}${project.projectImageSource}`}
                     alt={project.name} 
                     className="project-cards-image"
                 />

@@ -6,21 +6,12 @@ import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
-    <Router basename="/davidreynon_react">
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="app-container">
         <TopMenu />
         <Routes>
-          {/* Default landing route */}
           <Route path="/" element={<LandingPage />} />
-
-          {/* Dynamic slug-based route */}
           <Route path="/:slug" element={<LandingPage />} />
-
-          {/* Legacy project-specific routes (optional) */}
-          <Route path="/olympic" element={<LandingPage initialProjectId={2} />} />
-          <Route path="/popup" element={<LandingPage initialProjectId={3} />} />
-
-          {/* 404 fallback */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <BottomMenu />

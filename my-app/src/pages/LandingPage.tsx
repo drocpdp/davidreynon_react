@@ -5,25 +5,27 @@ import { PROJECTS } from '../data/projects';
 import DisplayContainer from '../components/DisplayContainer';
 import ProjectCards from '../components/ProjectCards';
 
-
 const LandingPage = ({ initialProjectId }: { initialProjectId?: number }) => {
-  const defaultProject = PROJECTS.find((p: { id: number | undefined; }) => p.id === initialProjectId) || PROJECTS[0];
-  const [selectedProject, setSelectedProject] = useState(defaultProject);
   const { slug } = useParams();
 
-  useEffect(() => {
+  const getInitialProject = () => {
     if (slug) {
-      const match = PROJECTS.find((p: { slug: string; }) => p.slug === slug);
-      if (match) setSelectedProject(match);
+      const match = PROJECTS.find((p) => p.slug === slug);
+      return match || PROJECTS[0]; // fallback if slug not found
+    } else if (initialProjectId) {
+      const match = PROJECTS.find((p) => p.id === initialProjectId);
+      return match || PROJECTS[0]; // fallback if ID not found
     }
-  }, [slug]);
+    return PROJECTS[0]; // homepage default
+  };
 
+  const [selectedProject, setSelectedProject] = useState(getInitialProject);
+
+  // Update project when slug changes (navigation)
   useEffect(() => {
-    if (initialProjectId) {
-      const project = PROJECTS.find((p: { id: number; }) => p.id === initialProjectId);
-      if (project) setSelectedProject(project);
-    }
-  }, [initialProjectId]);
+    setSelectedProject(getInitialProject());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug, initialProjectId]);
 
   return (
     <div className="landing-page">
@@ -34,10 +36,7 @@ const LandingPage = ({ initialProjectId }: { initialProjectId?: number }) => {
       </div>
 
       <DisplayContainer selectedProject={selectedProject} />
-      <ProjectCards
-        allProjects={PROJECTS}
-        onSelect={setSelectedProject}
-      />
+      <ProjectCards allProjects={PROJECTS} onSelect={setSelectedProject} />
     </div>
   );
 };
