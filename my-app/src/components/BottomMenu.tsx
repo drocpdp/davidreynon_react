@@ -4,7 +4,7 @@ const BottomMenu = () => {
   return (
     <div id="bottom-menu-container" className="bottom-menu">
       <Link 
-              id="top-menu-about-me-link" to="/about">About Me
+              id="top-menu-about-me-link" to="about">About Me
       </Link> |{" "}
       <a
         id="bottom-menu-linkedin-link"

@@ -4,7 +4,9 @@ const TopMenu = () => {
   return (
     <div id="top-menu-container" className="top-menu">
       <Link 
-        id="top-menu-about-me-link" to="/about">About Me</Link> |{" "}
+        id="top-menu-about-me-link" 
+        to="about">About Me
+      </Link> |{" "}
       <a
         id="top-menu-linkedin-link"
         href="https://linkedin.com/in/daveqa"
