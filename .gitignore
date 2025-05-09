@@ -26,7 +26,6 @@ dist/
 .idea/
 
 # Vite build
-/build/
 /dist/
 /vite.svg
 
