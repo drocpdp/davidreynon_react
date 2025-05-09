@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import TopMenu from './components/TopMenu';
 import BottomMenu from './components/BottomMenu';
 import LandingPage from './pages/LandingPage';
@@ -12,7 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/:slug" element={<LandingPage />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="/not-found" element={<PageNotFound />} />
+          <Route path="*" element={<Navigate to="/not-found" replace />} />
         </Routes>
         <BottomMenu />
       </div>
