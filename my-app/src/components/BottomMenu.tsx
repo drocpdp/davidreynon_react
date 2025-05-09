@@ -1,5 +1,3 @@
-import './Menu.css';
-
 const BottomMenu = () => {
   return (
     <div id="bottom-menu-container" className="bottom-menu">
