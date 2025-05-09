@@ -31,7 +31,11 @@ dist/
 /vite.svg
 
 # Public output
-public/assets/
+# Don't ignore actual assets
+!public/assets/
+!public/assets/images/
+!public/assets/fonts/
+
 public/vite.svg
 
 # OS-specific hidden files
