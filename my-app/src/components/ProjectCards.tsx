@@ -1,6 +1,7 @@
-import { getAssetUrl } from '../utils/assets';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectCards = ({ allProjects, onSelect }: { allProjects: any[], onSelect: (p: any) => void }) => {
+    const navigate = useNavigate();
     return (
       <div className="project-cards">
         {allProjects.slice(1).map((project) => (
@@ -8,7 +9,10 @@ const ProjectCards = ({ allProjects, onSelect }: { allProjects: any[], onSelect:
             className="project-card"
             key={project.id}
             id="project-card-{project.id}"
-            onClick={() => onSelect(project)}
+            onClick={() => {
+              onSelect(project);
+              navigate(`/${project.slug}`);
+            }}
           >
             <div className="project-title">
                 {project.name}
