@@ -1,39 +1,28 @@
 import { useEffect, useState } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
-
+import { useParams } from 'react-router-dom';
 import { PROJECTS } from '../data/projects';
 import DisplayContainer from '../components/DisplayContainer';
 import ProjectCards from '../components/ProjectCards';
 
-const LandingPage = ({ initialProjectId }: { initialProjectId?: number }) => {
+const LandingPage = () => {
   const { slug } = useParams();
 
-  const getInitialProject = () => {
-    if (slug) {
-      return PROJECTS.find((p) => p.slug === slug) || null;
-    } else if (initialProjectId) {
-      return PROJECTS.find((p) => p.id === initialProjectId) || PROJECTS[0];
-    }
-    return PROJECTS[0]; // homepage
-  };
-
-  const [selectedProject, setSelectedProject] = useState(getInitialProject);
+  const [selectedProject, setSelectedProject] = useState(() => {
+    const found = PROJECTS.find(p => p.slug === slug);
+    return found || PROJECTS[0];
+  });
 
   useEffect(() => {
-    setSelectedProject(getInitialProject());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slug, initialProjectId]);
+    const found = PROJECTS.find(p => p.slug === slug);
+    setSelectedProject(found || PROJECTS[0]);
+  }, [slug]);
 
-  if (!selectedProject) {
-    return <Navigate to="/not-found" replace />;
-  }
+  if (!selectedProject) return <div>Loading project...</div>;
 
   return (
     <div className="landing-page">
       <div className="top-menu">
-        <div id="top-title-name" className="top-title">
-          DAVID EYNON
-        </div>
+        <div id="top-title-name" className="top-title">DAVID EYNON</div>
       </div>
 
       <DisplayContainer selectedProject={selectedProject} />
@@ -43,5 +32,3 @@ const LandingPage = ({ initialProjectId }: { initialProjectId?: number }) => {
 };
 
 export default LandingPage;
-
-
