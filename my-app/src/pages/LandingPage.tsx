@@ -7,9 +7,12 @@ import PageNotFound from './PageNotFound';
 const LandingPage = () => {
   const { slug } = useParams();
 
-  const match = slug ? PROJECTS.find(p => p.slug === slug) : PROJECTS[0];
+  // Find matching project if slug exists
+  const selectedProject = slug
+    ? PROJECTS.find((p) => p.slug === slug)
+    : PROJECTS[0];
 
-  if (slug && !match) {
+  if (slug && !selectedProject) {
     return <PageNotFound />;
   }
 
@@ -19,7 +22,7 @@ const LandingPage = () => {
         <div id="top-title-name" className="top-title">DAVID EYNON</div>
       </div>
 
-      <DisplayContainer selectedProject={match} />
+      <DisplayContainer selectedProject={selectedProject} />
       <ProjectCards allProjects={PROJECTS} onSelect={() => {}} />
     </div>
   );
