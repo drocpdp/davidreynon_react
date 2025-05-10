@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { PROJECTS } from '../data/projects';
 import DisplayContainer from '../components/DisplayContainer';
 import ProjectCards from '../components/ProjectCards';
@@ -7,17 +7,19 @@ import ProjectCards from '../components/ProjectCards';
 const LandingPage = () => {
   const { slug } = useParams();
 
-  const [selectedProject, setSelectedProject] = useState(() => {
-    const found = PROJECTS.find(p => p.slug === slug);
-    return found || PROJECTS[0];
-  });
+  const match = slug ? PROJECTS.find(p => p.slug === slug) : PROJECTS[0];
+
+  if (slug && !match) {
+    return <Navigate to="/not-found" replace />;
+  }
+
+  const [selectedProject, setSelectedProject] = useState(match);
 
   useEffect(() => {
-    const found = PROJECTS.find(p => p.slug === slug);
-    setSelectedProject(found || PROJECTS[0]);
+    if (slug && match) {
+      setSelectedProject(match);
+    }
   }, [slug]);
-
-  if (!selectedProject) return <div>Loading project...</div>;
 
   return (
     <div className="landing-page">
