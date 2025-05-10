@@ -8,7 +8,7 @@ const PageNotFound = () => {
         fontFamily: 'inherit',
       }}
     >
-      <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>404 — Page Not Found</h1>
+      <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>404 — Page Not Found!</h1>
       <p style={{ fontSize: '1.1rem' }}>
         Sorry, we couldn’t find the page you were looking for.
       </p>
