@@ -7,19 +7,23 @@ import ProjectCards from '../components/ProjectCards';
 const LandingPage = () => {
   const { slug } = useParams();
 
+  // Find matching project based on slug
   const match = slug ? PROJECTS.find(p => p.slug === slug) : PROJECTS[0];
 
+  // Redirect only if slug is present and no match was found
   if (slug && !match) {
     return <Navigate to="/not-found" replace />;
   }
 
+  // Track selected project in state
   const [selectedProject, setSelectedProject] = useState(match);
 
+  // Update selected project when URL slug changes
   useEffect(() => {
-    if (slug && match) {
+    if (match) {
       setSelectedProject(match);
     }
-  }, [slug]);
+  }, [match]);
 
   return (
     <div className="landing-page">
