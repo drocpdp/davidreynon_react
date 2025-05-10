@@ -1,6 +1,6 @@
 # David Eynon – Developer Portfolio (React + Vite)
 
-This is the source code for [davidreynon.com](https://drocpdp.github.io/davidreynon_react), a personal portfolio site built with React, Vite, and GitHub Pages. It features dynamic routing using slugs, responsive design, and is fully deployable via GitHub...
+This is the source code for [davidreynon.com](https://drocpdp.github.io/davidreynon_react), a personal portfolio site built with React, Vite, and GitHub Pages. It features dynamic routing using slugs, responsive design, and is fully deployable via GitHub.
 
 ## 🚀 Live Site
 
