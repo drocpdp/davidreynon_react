@@ -9,7 +9,7 @@ export const PROJECTS: any = [
         projectUrl:'',
         projectUrlTitle:'',
         shortDescription:'',
-        longDescription:'Hello! I have 10+ years of experience developing and testing full scale apps and pages in multiple industries, using multiple technologies, languages, frameworks and design principles. I have created complex scaleable automation frameworks, demonstrate sound software design, and demonstrate a team-driven selfless approach, yet practice tactful assertiveness when needed.',
+        longDescription:'Hello!! I have 10+ years of experience developing and testing full scale apps and pages in multiple industries, using multiple technologies, languages, frameworks and design principles. I have created complex scaleable automation frameworks, demonstrate sound software design, and demonstrate a team-driven selfless approach, yet practice tactful assertiveness when needed.',
         longDescription2:'Currently I live in Switzerland. I am open for work in Zurich and surrounding cantons, as well as Ticino.',
         longDescription3:'Please feel free to explore the projects I have completed as well as my work experience by clicking any of the projects below. Feel free to reach out for a demo or more information on any of these projects. Most are in Github now.',
         longDescription4:'You can contact me via my LinkedIn profile.',
