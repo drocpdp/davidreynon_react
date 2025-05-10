@@ -7,7 +7,6 @@ import PageNotFound from './PageNotFound';
 const LandingPage = () => {
   const { slug } = useParams();
 
-  // Find matching project if slug exists
   const selectedProject = slug
     ? PROJECTS.find((p) => p.slug === slug)
     : PROJECTS[0];

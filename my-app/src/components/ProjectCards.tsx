@@ -11,7 +11,7 @@ const ProjectCards = ({ allProjects, onSelect }: { allProjects: any[], onSelect:
             id="project-card-{project.id}"
             onClick={() => {
               onSelect(project);
-              navigate(`/${project.slug}`);
+              navigate(`/${project.slug.toLowerCase()}`);
             }}
           >
             <div className="project-title">

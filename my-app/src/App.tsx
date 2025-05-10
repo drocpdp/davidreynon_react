@@ -12,7 +12,6 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/:slug" element={<LandingPage />} />
-          <Route path="/not-found" element={<PageNotFound />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <BottomMenu />
