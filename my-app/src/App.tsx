@@ -7,7 +7,7 @@ import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <div className="app-container">
         <TopMenu />
         <Routes>
