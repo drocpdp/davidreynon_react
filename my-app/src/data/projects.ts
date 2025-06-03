@@ -2,7 +2,8 @@
 
 export const PROJECTS: any = [
 
-    {   id:1,
+    {   
+        id:1,
         name: "About Me",
         slug: "about",
         projectImageSource:"assets/images/self_profile_pic.jpg",
@@ -16,7 +17,21 @@ export const PROJECTS: any = [
         keywords:''
     },
     {
-        id: 2,
+        id:2,
+        name: "React Resume Site / CI / Testing (2.0)",
+        slug: "react-resume-site",
+        projectImageSource: "assets/images/ReactPersonalSite.png",
+        projectUrl: 'https://github.com/drocpdp/davidreynon_react',
+        projectUrlTitle: '',
+        shortDescription: "This site, davidreynon.com, was migrated from Angular to React.",
+        longDescription: "I completely migrated this site from Angular to React, able to maintain the same look/feel and functionality.",
+        longDescription2:'Utilizing React, Vite, Github Actions, Tested in Playwright',
+        longDescription3:'Testing framework implemented in same repository, allowing for seamless CI and strict enforcement',
+        longDescription4:'Test Automation, React, CI, Github Actions, Vite, Test Framework Development, Load Testing, Database Testing, Full Stack Software Development.',        
+        keywords: "Javascript, React, TypeScript, SauceLabs"
+    },    
+    {
+        id: 3,
         name: "PyTwitService",
         slug: "olympic",
         projectImageSource:"assets/images/pytwitserviceImage.jpg",
@@ -30,7 +45,7 @@ export const PROJECTS: any = [
         keywords: 'Python3, Twitter, Tweepy, Amazon AWS, Jenkins'
     },
     {
-        id:3,
+        id:4,
         name: "Pop Up Automation",
         slug: "popup",
         projectImageSource:"assets/images/PopupAutomationImage.jpg",
@@ -44,8 +59,8 @@ export const PROJECTS: any = [
         keywords: "AWS EC2, Python3, Selenium, Appium, Sauce Labs, Jenkins"
     },
     {
-        id:4,
-        name: "Angular Resume Site",
+        id:5,
+        name: "Angular Resume Site (OLD)",
         slug: "angular-resume",
         projectImageSource:"assets/images/AngularPersonalSite.jpg",        
         projectUrl: 'https://davidreynon.com',
@@ -58,7 +73,7 @@ export const PROJECTS: any = [
         keywords: "Angular, CSS, Javascript, EC2, nginx"
     },    
     {
-        id:5,
+        id:6,
         name: "Testing: davidreynon.com",
         slug: "testing-davidreynon-dot-com",
         projectImageSource:"assets/images/davidreynondotcom.jpg",        
@@ -72,7 +87,7 @@ export const PROJECTS: any = [
         keywords: "Python3, Selenium, Appium, Sauce Labs, CSS, Javascript"
     },
     {
-        id:6,
+        id:7,
         name: "Work Experience",
         slug: "work-experience",
         projectImageSource: "assets/images/WorkExperience.jpg",
@@ -84,5 +99,5 @@ export const PROJECTS: any = [
         longDescription3:'Achievements include marked increases in product turnaround, product robustness, impactful decrease in defects, increased relationships between all parties: Development, QA, Business, Upper Management, and most importantly, customers.',
         longDescription4:'Test Automation, Test Framework Development, Load Testing, Database Testing, Full Stack Software Development.',        
         keywords: "Python3, Java, C++, Angular, Javascript, HTML5, Selenium, WebDriver, MySQL, SQL Server, Atlassian Jira, Jenkins, Nginx, Docker, Amazon EC2, and more"
-    }
+    },
 ];
