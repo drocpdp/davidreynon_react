@@ -30,7 +30,7 @@ jobs:
               with:
                 node-version: 20
             - run: npm install
+              working-directory: ./my-app
             - run: npx playwright install
             - name: Run Playwright tests on Sauce Labs
               run: npx playwright test --project=firefox
-              working-directory: ./my-app
