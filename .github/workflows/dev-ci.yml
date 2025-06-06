@@ -13,8 +13,10 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                    node-version: 20
-            - run: npm install
+                node-version: 20
+            - name: Install dependencies
+              run: npm install
+              working-directory: ./my-app
             - run: npx vitest run
     
     e2e-playwright:
@@ -31,3 +33,4 @@ jobs:
             - run: npx playwright install
             - name: Run Playwright tests on Sauce Labs
               run: npx playwright test --project=firefox
+              working-directory: ./my-app
