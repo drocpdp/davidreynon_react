@@ -11,6 +11,14 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+
+const sauceBase = {
+  connectOptions: {
+    wsEndpoint: `wss://playwright.saucelabs.com/playwright?username=${process.env.SAUCE_USERNAME}&accessKey=${process.env.SAUCE_ACCESS_KEY}`
+  }
+}
+
 export default defineConfig({
   testDir: './tests/e2e',
   /* Run tests in files in parallel */
@@ -20,7 +28,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* default test timout in ms */
-  timeout: 50000,
+  timeout: 60000,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -70,6 +78,14 @@ export default defineConfig({
        name: 'Google Chrome',
        use: { ...devices['Desktop Chrome'], channel: 'chrome' },
      },
+     /* Saucelabs browsers */
+     {
+       name: 'sauce-firefox',
+       use: {
+        ...sauceBase,
+        browserName: 'firefox'
+       }
+      },
   ],
 
     //webServer: {
