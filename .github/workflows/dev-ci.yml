@@ -32,6 +32,6 @@ jobs:
             - run: npm install
               working-directory: ./my-app
             - run: npx playwright install
-            - name: Run Playwright tests on Sauce Labs
-              run: npx playwright test --project=sauce-firefox
+            - name: Run Playwright tests
+              run: npx playwright test --project=firefox
               working-directory: ./my-app
