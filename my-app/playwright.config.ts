@@ -15,7 +15,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 const sauceBase = {
   connectOptions: {
-    wsEndpoint: `wss://playwright.saucelabs.com/playwright?username=${process.env.SAUCE_USERNAME}&accessKey=${process.env.SAUCE_ACCESS_KEY}`
+        wsEndpoint: `wss://playwright.saucelabs.com/playwright?username=${process.env.SAUCE_USERNAME}&accessKey=${process.env.SAUCE_ACCESS_KEY}`
   }
 }
 
