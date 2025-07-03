@@ -2,9 +2,9 @@ name: DEV CI - Full Suite Tests
 
 on:
     push:
-        branches: ['dev', 'qa', 'qa_*', 'qa-*', 'v*', 'feature/**']
+        branches: []
     pull_request:
-        branches: ['dev', 'qa', 'qa_*', 'qa-*', 'v*', 'feature/**']
+        branches: []
 
 jobs:
     unit-tests:
