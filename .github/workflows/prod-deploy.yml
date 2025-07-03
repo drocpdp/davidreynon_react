@@ -1,0 +1,29 @@
+name: DEV CI - Deploy Only (No Tests)
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./my-app
+
+      # Optional: You can add build/deploy steps below if needed
+      # - name: Build app
+      #   run: npm run build
+      #   working-directory: ./my-app
+
+      # - name: Deploy to EC2 or server
+      #   run: ./deploy.sh
