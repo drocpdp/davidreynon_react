@@ -30,7 +30,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             npx gh-pages -d dist \
-            -r "https://x-access-token:${GITHUB_TOKEN}@github.com/David-Eynon/davidreynondotcom.git"
+            -r "https://x-access-token:${GITHUB_TOKEN}@github.com/drocpdp/davidreynondotcom.git"
         working-directory: ./my-app
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
