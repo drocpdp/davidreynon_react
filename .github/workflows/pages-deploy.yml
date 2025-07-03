@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages.
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -24,13 +24,14 @@ jobs:
       - name: Build site
         run: npm run build
         working-directory: ./my-app
-    
+
       - name: Deploy to GitHub Pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          npm run deploy
+          npx gh-pages -d dist \
+            -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>" \
+            -r "https://x-access-token:${GITHUB_TOKEN}@github.com/David-Eynon/davidreynondotcom.git"
         working-directory: ./my-app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
