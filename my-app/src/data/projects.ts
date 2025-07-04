@@ -10,7 +10,7 @@ export const PROJECTS: any = [
         projectUrl:'',
         projectUrlTitle:'',
         shortDescription:'',
-        longDescription:'I am a software developer and test automation engineer with 10+ years of experience building and testing full-scale applications across multiple industries. My work spans a range of technologies, frameworks, and design principles—from scalable automation frameworks to well-architected full-stack solutions.',
+        longDescription:'Hello, I am a software developer and test automation engineer with 10+ years of experience building and testing full-scale applications across multiple industries. My work spans a range of technologies, frameworks, and design principles—from scalable automation frameworks to well-architected full-stack solutions.',
         longDescription2:'I bring a collaborative, team-first mindset with a focus on quality and impact. I lead with empathy and adaptability, but speak up with confidence when needed.',
         longDescription3:'Please explore my featured projects and professional background below. Most code is available on GitHub. If you’d like a demo or more info, feel free to reach out via LinkedIn.',
         longDescription4:'You can contact me via my LinkedIn profile.',
