@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Clean old build
+        run: rm -rf dist
+        working-directory: ./my-app
+        
       - name: Checkout code
         uses: actions/checkout@v4
 
