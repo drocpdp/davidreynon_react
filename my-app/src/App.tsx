@@ -6,7 +6,7 @@ import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
-    <Router basename="/davidreynon_react">
+    <Router>
       <div className="app-container">
         <TopMenu />
         <Routes>
