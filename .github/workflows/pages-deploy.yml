@@ -29,7 +29,7 @@ jobs:
 
       - name: Copy index.html to 404.html
         run: cp dist/index.html dist/404.html
-        working-directory: ./my-app        
+        working-directory: ./my-app
 
       - name: Deploy to GitHub Pages
         run: |
@@ -40,3 +40,4 @@ jobs:
         working-directory: ./my-app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
