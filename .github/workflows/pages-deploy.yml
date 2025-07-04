@@ -1,8 +1,10 @@
-name: Deploy to GitHub Pages.
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: []
+    branches:
+      - 'main'
+      - 'releases/**'
 
 jobs:
   build-and-deploy:
@@ -15,7 +17,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Install dependencies
         run: npm install
@@ -27,10 +29,10 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            npx gh-pages -d dist \
-            -r "https://x-access-token:${GITHUB_TOKEN}@github.com/drocpdp/davidreynondotcom.git"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npx gh-pages -d dist \
+          -r "https://x-access-token:${GITHUB_TOKEN}@github.com/drocpdp/davidreynon_react.git"
         working-directory: ./my-app
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
