@@ -12,10 +12,6 @@ jobs:
 
     steps:
 
-      - name: Clean old build
-        run: rm -rf dist
-        working-directory: ./my-app
-        
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -27,6 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm install
         working-directory: ./my-app
+
+      - name: Clean old build
+        run: rm -rf dist
+        working-directory: ./my-app        
 
       - name: Build site
         run: npm run build
