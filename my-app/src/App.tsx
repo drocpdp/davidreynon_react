@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import PageNotFound from './pages/PageNotFound';
 
 import SoccerScanTrainerPrivacy from './pages/SoccerScanTrainerPrivacy';
+import SoccerScanTrainerSupport from './pages/SoccerScanTrainerSupport';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/:slug" element={<LandingPage />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="/soccer-scan-trainer/privacy" element={<SoccerScanTrainerPrivacy />} />
+          <Route path="/soccer-scan-trainer/support" element={<SoccerScanTrainerSupport />} />
         </Routes>
         <BottomMenu />
       </div>
