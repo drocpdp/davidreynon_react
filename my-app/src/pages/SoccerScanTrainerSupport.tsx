@@ -1,160 +1,139 @@
-import type { CSSProperties } from "react";
+import { Link } from "react-router-dom";
+import "../styles/companyPages.css";
 
-export default function SoccerScanTrainerSupport() {
+const APP_STORE_URL =
+  "https://apps.apple.com/us/app/soccer-scan-trainer/id6774516286";
+
+export default function SoccerScanTrainerSupportPage() {
   return (
-    <main style={styles.page}>
-      <section style={styles.card}>
-        <p style={styles.kicker}>5:10am</p>
+    <main className="brand-page">
+      <section className="product-hero">
+        <div className="brand-shell">
+          <p className="eyebrow">Support</p>
 
-        <h1 style={styles.title}>Soccer Scan Trainer Support</h1>
+          <h1>Soccer Scan Trainer Support</h1>
 
-        <p style={styles.paragraph}>
-          Need help with Soccer Scan Trainer? For support, questions, feedback,
-          or app issues, please contact:
-        </p>
+          <p className="hero-subtitle">
+            Help, feedback, and basic guidance for Soccer Scan Trainer — a
+            visual cue training app for soccer players working on scanning,
+            reaction speed, first touch, and awareness.
+          </p>
 
-        <p style={styles.email}>
-          <a href="mailto:davidreynon@gmail.com">davidreynon@gmail.com</a>
-        </p>
+          <div className="hero-actions">
+            <a className="primary-button" href="mailto:davidreynon@gmail.com">
+              Email Support
+            </a>
 
-        <h2 style={styles.heading}>Common Questions</h2>
+            <Link className="secondary-button" to="/soccer-scan-trainer">
+              Back to App Page
+            </Link>
+          </div>
+        </div>
+      </section>
 
-        <h3 style={styles.question}>
-          Does Soccer Scan Trainer require an account?
-        </h3>
-        <p style={styles.paragraph}>
-          No. Soccer Scan Trainer works without an account.
-        </p>
+      <section className="brand-section">
+        <div className="brand-shell two-column">
+          <div>
+            <p className="section-label">Contact</p>
+            <h2>Need help with the app?</h2>
+          </div>
 
-        <h3 style={styles.question}>Does the app require internet?</h3>
-        <p style={styles.paragraph}>
-          No. The app is designed to work offline.
-        </p>
+          <div className="section-copy">
+            <p>
+              For support, feedback, bug reports, or questions, please email:
+            </p>
 
-        <h3 style={styles.question}>
-          Where are saved configurations stored?
-        </h3>
-        <p style={styles.paragraph}>
-          Saved configurations and language preferences are stored locally on
-          your device.
-        </p>
+            <p>
+              <a href="mailto:davidreynon@gmail.com">davidreynon@gmail.com</a>
+            </p>
 
-        <h3 style={styles.question}>
-          Does Soccer Scan Trainer collect personal data?
-        </h3>
-        <p style={styles.paragraph}>
-          No. Soccer Scan Trainer does not collect, sell, or share personal
-          data.
-        </p>
+            <p>
+              When contacting support, it helps to include your device model,
+              iOS version, and a short description of what happened.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <p style={styles.paragraph}>
-          View the{" "}
-          <a href="/soccer-scan-trainer/privacy">
-            Soccer Scan Trainer Privacy Policy
-          </a>
-          .
-        </p>
+      <section className="brand-section alt-section">
+        <div className="brand-shell">
+          <p className="section-label">Quick Help</p>
+          <h2>Common questions</h2>
 
-        <h2 style={styles.heading}>About 5:10am</h2>
+          <div className="drill-grid">
+            <article className="drill-card">
+              <h3>What does the app do?</h3>
+              <p>
+                Soccer Scan Trainer displays visual cues such as colors,
+                numbers, letters, and arrows. Players react to those cues while
+                passing, receiving, dribbling, turning, or changing direction.
+              </p>
+            </article>
 
-        <p style={styles.paragraph}>
-          5:10am is the alarm on my phone — the time early training starts
-          before the day gets busy.
-        </p>
+            <article className="drill-card">
+              <h3>Do I need an account?</h3>
+              <p>
+                No. Soccer Scan Trainer does not require an account. Open the
+                app, choose your cues, set the session, and train.
+              </p>
+            </article>
 
-        <p style={styles.paragraph}>
-          Soccer Scan Trainer was hatched from those early morning sessions with
-          my son, Pryce, while working on extra scanning, awareness, and reaction
-          reps outside team practice.
-        </p>
+            <article className="drill-card">
+              <h3>How should I set it up?</h3>
+              <p>
+                Place your iPhone on a tripod, chair, bench, fence, wall, or any
+                stable surface where the player can clearly see the screen.
+              </p>
+            </article>
 
-        <p style={styles.paragraph}>
-          The app is designed for parents, players, and coaches who want a
-          simple, focused way to add useful training at home, at the field, or
-          with a ball and wall. The goal is not to replace team practice, but to
-          support the extra work that helps players prepare, react, and play
-          faster.
-        </p>
+            <article className="drill-card">
+              <h3>Who is it for?</h3>
+              <p>
+                The app is built for young soccer players, parents, individual
+                coaches, and players who want to add scanning and reaction work
+                to technical training.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <h2 style={styles.heading}>App Information</h2>
+      <section className="brand-section">
+        <div className="brand-shell two-column">
+          <div>
+            <p className="section-label">Useful Links</p>
+            <h2>Learn more about Soccer Scan Trainer.</h2>
+          </div>
 
-        <p style={styles.paragraph}>
-          Soccer Scan Trainer is a visual cue training app for soccer and
-          football players. It is intended to support scanning habits, awareness,
-          reaction speed, and preparation before receiving the ball.
-        </p>
+          <div className="tag-list">
+            <Link to="/soccer-scan-trainer">Soccer Scan Trainer Page</Link>
+            <Link to="/510am">5:10am Company Page</Link>
+            <Link to="/soccer-scan-trainer/privacy">Privacy Policy</Link>
+            <a href={APP_STORE_URL} target="_blank" rel="noreferrer">
+              App Store
+            </a>
+            <a href="mailto:davidreynon@gmail.com">Contact Support</a>
+          </div>
+        </div>
+      </section>
 
-        <p style={styles.paragraph}>
-          The app is not medical, fitness, or professional coaching advice.
-          Players should train safely, use appropriate space, and stop if they
-          feel pain, dizziness, or discomfort.
-        </p>
+      <section className="brand-footer-cta">
+        <div className="brand-shell">
+          <h2>Soccer Scan Trainer</h2>
 
-        <p style={styles.updated}>Last updated: May 2026</p>
+          <p>Train your eyes. React faster. Build better habits.</p>
+
+          <div className="footer-links">
+            <Link to="/soccer-scan-trainer">App Page</Link>
+            <Link to="/510am">5:10am</Link>
+            <a href={APP_STORE_URL} target="_blank" rel="noreferrer">
+              App Store
+            </a>
+            <Link to="/soccer-scan-trainer/privacy">Privacy Policy</Link>
+            <a href="mailto:davidreynon@gmail.com">Contact</a>
+          </div>
+        </div>
       </section>
     </main>
   );
 }
-
-const styles: Record<string, CSSProperties> = {
-  page: {
-    minHeight: "100vh",
-    background: "#f7f8f4",
-    color: "#0b3026",
-    padding: "48px 20px",
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-  },
-  card: {
-    maxWidth: "760px",
-    margin: "0 auto",
-    background: "#ffffff",
-    borderRadius: "20px",
-    padding: "40px",
-    boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
-  },
-  kicker: {
-    margin: "0 0 12px",
-    color: "#4f7f35",
-    fontSize: "15px",
-    fontWeight: 800,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-  },
-  title: {
-    fontSize: "36px",
-    lineHeight: 1.1,
-    marginTop: 0,
-    marginBottom: "20px",
-    letterSpacing: "-0.03em",
-  },
-  heading: {
-    fontSize: "24px",
-    marginTop: "36px",
-    marginBottom: "16px",
-    letterSpacing: "-0.02em",
-  },
-  question: {
-    fontSize: "18px",
-    marginTop: "24px",
-    marginBottom: "8px",
-  },
-  paragraph: {
-    fontSize: "17px",
-    lineHeight: "1.6",
-    color: "#39433f",
-    marginTop: "0",
-    marginBottom: "16px",
-  },
-  email: {
-    fontSize: "18px",
-    fontWeight: 700,
-    marginTop: "12px",
-    marginBottom: "28px",
-  },
-  updated: {
-    marginTop: "40px",
-    fontSize: "14px",
-    color: "#68736e",
-  },
-};
