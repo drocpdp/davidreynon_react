@@ -6,11 +6,19 @@ const APP_STORE_URL =
 
 const SUPPORT_EMAIL = "davidreynon@gmail.com";
 
-export default function SoccerScanTrainerPrivacyPage() {
+export default function SoccerTrainerPrivacy() {
   return (
     <main className="brand-page">
       <section className="product-hero">
         <div className="brand-shell">
+          <Link to="/510am" className="brand-logo-link" aria-label="5:10am home">
+            <img
+              src="/images/FiveTenAMLogo_clean.png"
+              alt="5:10am / Soccer Scan Trainer logo"
+              className="brand-logo-mark"
+            />
+          </Link>
+
           <p className="eyebrow">Privacy Policy</p>
 
           <h1>Privacy Policy for Soccer Scan Trainer</h1>

@@ -4,12 +4,21 @@ import "../styles/companyPages.css";
 const APP_STORE_URL =
   "https://apps.apple.com/us/app/soccer-scan-trainer/id6774516286";
 
+const SUPPORT_EMAIL = "davidreynon@gmail.com";
+
 export default function FiveTenAmPage() {
   return (
     <main className="brand-page">
       <section className="brand-hero">
         <div className="brand-shell">
-          <p className="eyebrow">5:10am</p>
+          <Link to="/510am" className="brand-logo-link" aria-label="5:10am home">
+            <img
+              src="/images/FiveTenAMLogo_clean.png"
+              alt="5:10am logo"
+              className="brand-logo-mark brand-logo-mark-small"
+            />
+          </Link>
+
 
           <h1>Small training tools for players who put in the work early.</h1>
 
@@ -192,7 +201,7 @@ export default function FiveTenAmPage() {
             </a>
             <Link to="/soccer-scan-trainer/privacy">Privacy Policy</Link>
             <Link to="/soccer-scan-trainer/support">Support</Link>
-            <a href="mailto:davidreynon@gmail.com">Contact</a>
+            <a href={`mailto:${SUPPORT_EMAIL}`}>Contact</a>
           </div>
         </div>
       </section>

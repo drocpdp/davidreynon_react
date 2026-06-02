@@ -29,6 +29,26 @@ html {
   margin: 0 auto;
 }
 
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.brand-logo-mark {
+  width: 90px;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  box-shadow: var(--brand-shadow);
+}
+
+.brand-logo-mark-small {
+  width: 200px;
+  border-radius: 18px;
+}
+
 .brand-hero,
 .product-hero {
   padding: 96px 0 80px;
@@ -156,6 +176,11 @@ html {
 
 .section-copy p:first-child {
   margin-top: 0;
+}
+
+.section-copy a {
+  color: var(--brand-accent);
+  font-weight: 800;
 }
 
 .clean-list {
@@ -441,7 +466,8 @@ html {
   gap: 10px;
 }
 
-.tag-list span {
+.tag-list span,
+.tag-list a {
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--brand-border);
@@ -451,6 +477,45 @@ html {
   color: var(--brand-dark);
   font-size: 0.92rem;
   font-weight: 800;
+  text-decoration: none;
+}
+
+.tag-list a:hover {
+  border-color: var(--brand-dark);
+}
+
+.policy-card {
+  max-width: 860px;
+  border: 1px solid var(--brand-border);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: var(--brand-shadow);
+  padding: 42px;
+  color: var(--brand-muted);
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+.policy-card h2 {
+  margin: 38px 0 12px;
+  color: var(--brand-dark);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+.policy-card p {
+  margin: 16px 0;
+}
+
+.policy-card a {
+  color: var(--brand-accent);
+  font-weight: 800;
+}
+
+.policy-effective-date {
+  color: var(--brand-muted);
+  margin-top: 0 !important;
 }
 
 .final-line {
@@ -522,6 +587,11 @@ html {
     padding: 22px;
   }
 
+  .policy-card {
+    padding: 26px;
+    border-radius: 22px;
+  }
+
   .phone-frame {
     min-height: 460px;
     border-radius: 38px;
@@ -531,44 +601,13 @@ html {
     font-size: 7rem;
   }
 
-.policy-card {
-  max-width: 860px;
-  border: 1px solid var(--brand-border);
-  border-radius: 28px;
-  background: #ffffff;
-  box-shadow: var(--brand-shadow);
-  padding: 42px;
-  color: var(--brand-muted);
-  font-size: 1.03rem;
-  line-height: 1.75;
-}
-
-.policy-card h2 {
-  margin: 38px 0 12px;
-  color: var(--brand-dark);
-  font-size: clamp(1.45rem, 3vw, 2rem);
-  line-height: 1.18;
-  letter-spacing: -0.035em;
-}
-
-.policy-card p {
-  margin: 16px 0;
-}
-
-.policy-card a {
-  color: var(--brand-accent);
-  font-weight: 800;
-}
-
-.policy-effective-date {
-  color: var(--brand-muted);
-  margin-top: 0 !important;
-}
-
-@media (max-width: 560px) {
-  .policy-card {
-    padding: 26px;
-    border-radius: 22px;
+  .brand-logo-mark {
+    width: 78px;
+    border-radius: 20px;
   }
-}  
+
+  .brand-logo-mark-small {
+    width: 200px;
+    border-radius: 18px;
+  }
 }

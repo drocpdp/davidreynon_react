@@ -370,7 +370,7 @@ export default function SoccerScanTrainerPage() {
             </a>
             <Link to="/soccer-scan-trainer/privacy">Privacy Policy</Link>
             <Link to="/soccer-scan-trainer/support">Support</Link>
-            <a href="mailto:support@510am.app">Contact</a>
+            <a href="mailto:davidreynon@gmail.com">Contact</a>
           </div>
 
           <p className="final-line">
